@@ -8,8 +8,14 @@
 
 ### Kubernetes
 
+deploy nginx
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/ShubhamTatvamasi/nginx-hostname/master/nginx.yaml
+```
+
+check the output from pods
+```bash
+while sleep 1; do curl $(kubectl get service/nginx -o jsonpath={.spec.clusterIP}); done
 ```
 ---
 
