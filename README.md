@@ -17,10 +17,16 @@ check the output from pods
 ```bash
 while sleep 1; do curl $(kubectl get service nginx -o jsonpath={.spec.clusterIP}); done
 ```
+> you can also url of EXTERNAL-IP:NodePort
 
 scale deployment to 10 pods
 ```bash
 kubectl scale deployment nginx --replicas=10
+```
+
+delete deployment and service
+```bash
+kubectl delete -f https://raw.githubusercontent.com/ShubhamTatvamasi/nginx-hostname/master/nginx.yaml
 ```
 ---
 
