@@ -17,6 +17,11 @@ check the output from pods
 ```bash
 while sleep 1; do curl $(kubectl get service nginx -o jsonpath={.spec.clusterIP}); done
 ```
+
+scale deployment to 10 pods
+```bash
+kubectl scale deployment nginx --replicas=10
+```
 ---
 
 ### Docker
