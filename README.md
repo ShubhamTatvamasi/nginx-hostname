@@ -17,7 +17,7 @@ check the output from pods
 ```bash
 while sleep 1; do curl $(kubectl get service nginx -o jsonpath={.spec.clusterIP}); done
 ```
-> you can also url of EXTERNAL-IP:NodePort
+> you can also url of `EXTERNAL-IP:30080`
 
 scale deployment to 10 pods
 ```bash
