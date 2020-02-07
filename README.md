@@ -1,1 +1,9 @@
 # nginx-hostname
+
+
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/shubhamtatvamasi/nginx-hostname)](https://hub.docker.com/r/shubhamtatvamasi/nginx-hostname)
+[![Docker Pulls](https://img.shields.io/docker/pulls/shubhamtatvamasi/nginx-hostname)](https://hub.docker.com/r/shubhamtatvamasi/nginx-hostname)
+[![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/shubhamtatvamasi/nginx-hostname/latest)](https://hub.docker.com/r/shubhamtatvamasi/nginx-hostname)
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/shubhamtatvamasi/nginx-hostname)](https://hub.docker.com/r/shubhamtatvamasi/nginx-hostname)
+
+
