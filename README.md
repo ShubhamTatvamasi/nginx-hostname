@@ -13,12 +13,17 @@ deploy nginx
 kubectl apply -f https://raw.githubusercontent.com/ShubhamTatvamasi/nginx-hostname/master/nginx.yaml
 ```
 
-check the output from pods
+curl cluster IP
 ```bash
 NGINX_CLUSTER_IP=$(kubectl get service nginx -o jsonpath={.spec.clusterIP}) && \
 while sleep 1; do curl ${NGINX_CLUSTER_IP}; done
 ```
-> you can also url of `EXTERNAL-IP:30080`
+
+curl external IP
+```bash
+NGINX_EXTERNAL_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="ExternalIP")].address}') && \
+while sleep 1; do curl ${NGINX_EXTERNAL_IP}:30080; done
+```
 
 scale deployment to 10 pods
 ```bash
