@@ -21,7 +21,8 @@ while sleep 1; do curl ${NGINX_CLUSTER_IP}; done
 
 curl external IP
 ```bash
-NGINX_EXTERNAL_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="ExternalIP")].address}') && \
+NGINX_EXTERNAL_IP=$(kubectl get nodes -o \
+jsonpath='{.items[0].status.addresses[?(@.type=="ExternalIP")].address}') && \
 while sleep 1; do curl ${NGINX_EXTERNAL_IP}:30080; done
 ```
 
