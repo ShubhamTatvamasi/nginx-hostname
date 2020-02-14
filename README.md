@@ -15,7 +15,7 @@ kubectl apply -f https://raw.githubusercontent.com/ShubhamTatvamasi/nginx-hostna
 
 check the output from pods
 ```bash
-NGINX_CLUSTER_IP=$(kubectl get service nginx -o jsonpath={.spec.clusterIP}); \
+NGINX_CLUSTER_IP=$(kubectl get service nginx -o jsonpath={.spec.clusterIP}) && \
 while sleep 1; do curl ${NGINX_CLUSTER_IP}; done
 ```
 > you can also url of `EXTERNAL-IP:30080`
