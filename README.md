@@ -16,14 +16,14 @@ kubectl apply -f https://raw.githubusercontent.com/ShubhamTatvamasi/nginx-hostna
 curl cluster IP
 ```bash
 NGINX_CLUSTER_IP=$(kubectl get service nginx -o jsonpath={.spec.clusterIP}) && \
-while sleep 1; do curl ${NGINX_CLUSTER_IP}; done
+  while sleep 1; do curl ${NGINX_CLUSTER_IP}; done
 ```
 
 curl external IP
 ```bash
 NGINX_EXTERNAL_IP=$(kubectl get nodes -o \
-jsonpath='{.items[0].status.addresses[?(@.type=="ExternalIP")].address}') && \
-while sleep 1; do curl ${NGINX_EXTERNAL_IP}:30080; done
+  jsonpath='{.items[0].status.addresses[?(@.type=="ExternalIP")].address}') && \
+  while sleep 1; do curl ${NGINX_EXTERNAL_IP}:30080; done
 ```
 
 scale deployment to 10 pods
