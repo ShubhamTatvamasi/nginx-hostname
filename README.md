@@ -53,3 +53,16 @@ remove container
 ```bash
 docker rm -f nginx
 ```
+---
+
+Ingress
+
+```bash
+helm fetch --untar stable/nginx-ingress
+helm install ingress ./nginx-ingress
+```
+
+add tls certificate
+```bash
+kubectl create secret tls shubhamtatvamasi-tls --key ./shubhamtatvamasi.com.key --cert ./fullchain.cer
+```

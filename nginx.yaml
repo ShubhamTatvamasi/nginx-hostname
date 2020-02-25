@@ -33,8 +33,29 @@ spec:
   - port: 80
     protocol: TCP
     targetPort: 80
-    nodePort: 30080
+    name: service-port
   selector:
     run: nginx
-  type: NodePort
+...
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  name: nginx
+spec:
+  tls:
+  - secretName: shubhamtatvamasi-tls
+    hosts:
+      - parity.shubhamtatvamasi.com
+  rules:
+  - host: parity.shubhamtatvamasi.com
+    http:
+      paths:
+      - path: /nginx
+        backend:
+          serviceName: nginx
+          servicePort: service-port
 ...
