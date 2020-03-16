@@ -53,3 +53,8 @@ remove container
 ```bash
 docker rm -f nginx
 ```
+
+Check hostname with busybox
+```bash
+docker run --rm busybox printenv HOSTNAME
+```
